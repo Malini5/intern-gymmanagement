@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Gym Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from  "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+        import { getFirestore } from  "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
+    </script>
+    <h2>Admin Dashboard</h2>
+    <button onclick="logout()">Logout</button>
+    
+    <!-- Add Member Section -->
+    <h3>Add Member</h3>
+    <input type="text" id="memberName" placeholder="Member Name">
+    <input type="email" id="memberEmail" placeholder="Member Email">
+    <input type="password" id="memberPassword" placeholder="Password">
+    <button onclick="addMember()">Add Member</button>
+
+    <!-- Members List Section -->
+    <h3>Members List</h3>
+    <div id="membersList"></div>
+
+    <!-- Create Bill Section -->
+    <h3>Create Bill for Member</h3>
+    <select id="memberSelect"></select>
+    <input type="text" id="billAmount" placeholder="Bill Amount">
+    <input type="date" id="billDueDate">
+    <button onclick="createBill()">Create Bill</button>
+
+    <!-- Assign Notification -->
+    <h3>Send Notification</h3>
+    <textarea id="fees paid" placeholder="Enter notification message"></textarea>
+    <button onclick="sendNotification()">Send Notification</button>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js"></script>
+    <script src="admin.js"></script>
+    <script src="member.js"></script>
+
+</body>
+</html>
